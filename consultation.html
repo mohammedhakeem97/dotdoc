@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="احجز استشارتك الآن مع وكالة دوت دوك. تحليل شامل لعيادتك، إدارة الفريق، وتحسين الحضور الرقمي.">
+    <title>الاستشارة | وكالة دوت دوك</title>
+    
+    <meta property="og:title" content="الاستشارة | وكالة دوت دوك">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .page-header {
+            padding: 8rem 0 3rem;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--clr-blue-100), var(--clr-blue-50));
+        }
+
+        .consultation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .package-card {
+            background: var(--clr-white);
+            border: 1px solid var(--clr-light-gray);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-md);
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--clr-blue-300);
+        }
+
+        .package-card.premium {
+            background: var(--clr-blue-900);
+            color: var(--clr-white);
+            border-color: var(--clr-blue-600);
+        }
+
+        .package-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-blue-900);
+        }
+
+        .package-card.premium h3 {
+            color: var(--clr-white);
+        }
+
+        .package-card p {
+            color: var(--clr-gray);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-card.premium p {
+            color: var(--clr-blue-100);
+        }
+
+        .package-price {
+            font-family: var(--font-secondary);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--clr-blue-500);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .package-card.premium .package-price {
+            color: var(--clr-white);
+        }
+
+        .package-price span {
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--clr-gray);
+        }
+
+        .package-card.premium .package-price span {
+            color: var(--clr-blue-100);
+        }
+
+        .package-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+            flex-grow: 1;
+        }
+
+        .package-features li {
+            position: relative;
+            padding-right: 2rem;
+            font-weight: 600;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            top: 2px;
+            color: var(--clr-blue-500);
+            font-weight: 800;
+        }
+
+        .package-card.premium .package-features li::before {
+            color: var(--clr-blue-300);
+        }
+
+        .disclaimer-box {
+            background: var(--clr-blue-50);
+            border-right: 4px solid var(--clr-blue-500);
+            padding: 1.5rem 2rem;
+            margin-top: 3rem;
+            border-radius: 10px;
+        }
+
+        .disclaimer-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--clr-blue-900);
+            font-weight: 600;
+        }
+
+        .pdf-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .pdf-item {
+            background: var(--clr-white);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--clr-light-gray);
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .pdf-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .pdf-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-blue-900);
+        }
+
+        .pdf-icon {
+            color: var(--clr-blue-500);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="DotDoc Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">دوت دوك</span>
+                    <span class="logo-subtitle">التسويق الطبي</span>
+                </div>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                    <li><a href="index.html#about" class="nav-link">من نحن</a></li>
+                    <li><a href="index.html#services" class="nav-link">خدماتنا</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">أعمالنا</a></li>
+                    <li><a href="index.html#blog" class="nav-link">المدونة</a></li>
+                    <li><a href="index.html#consultation" class="nav-link">الاستشارة</a></li>
+                    <li><a href="#contact" class="nav-link btn-nav">تواصل معنا</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container reveal-up">
+                <span class="section-subtitle">التخطيط والتوجيه</span>
+                <h1 class="hero-title">الاستشارة الطبية <span class="text-gradient">التسويقية</span></h1>
+                <p class="hero-description" style="margin: 0 auto;">اكتشف المشاكل، احصل على الحلول، وابنِ خارطة طريق واضحة لنمو عيادتك وزيادة الحجوزات بثقة.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center reveal-up">
+                    <h2 class="section-title">اختر الباقة المناسبة لعيادتك</h2>
+                </div>
+
+                <div class="consultation-grid reveal-up">
+                    <!-- الباقة الأساسية -->
+                    <div class="package-card">
+                        <h3>الاستشارة الأونلاين</h3>
+                        <p>مكالمة تليفون، أو فيديو كول عن طريق Google Meet لمدة أقصاها ساعتين.</p>
+                        <div class="package-price">3000 <span>جنيه مصري</span></div>
+                        <ul class="package-features">
+                            <li>جلسة استشارية (أقصاها ساعتين) لمناقشة وضع العيادة.</li>
+                            <li>ملحقات الـ PDF (5 ملفات توجيهية وعملية).</li>
+                            <li>متابعة مجانية لمدة 3 شهور (مكالمة كل شهر مدة أقصاها ساعة).</li>
+                        </ul>
+                        <a href="https://wa.me/201019396638" class="btn btn-outline" style="text-align: center;" target="_blank" rel="noopener">احجز الاستشارة</a>
+                    </div>
+
+                    <!-- باقة زيارة العيادة -->
+                    <div class="package-card premium reveal-scale" style="transition-delay: 0.1s;">
+                        <h3>زيارة العيادة وتدريب الفريق</h3>
+                        <p>توجيه ميداني لعيادتك وتدريب عملي لفريقك على أرض الواقع.</p>
+                        <div class="package-price">8000 <span>جنيه مصري</span></div>
+                        <ul class="package-features">
+                            <li>زيارة ميدانية للعيادة وتقييم الوضع الفعلي.</li>
+                            <li>تدريب عملي لفريق العيادة على التعامل والإدارة.</li>
+                            <li>ملحقات الـ PDF (5 ملفات توجيهية وعملية).</li>
+                            <li>متابعتهم بميتنج أونلاين كل أسبوعين لمدة 3 شهور.</li>
+                        </ul>
+                        <a href="https://wa.me/201019396638" class="btn btn-primary" style="text-align: center;" target="_blank" rel="noopener">احجز زيارة العيادة</a>
+                    </div>
+                </div>
+
+                <div class="disclaimer-box reveal-up">
+                    <p>ملاحظة: جميع باقات الاستشارة تتضمن 5 ملفات PDF ترسل لك كملحقات عملية لتطبيق ما تم مناقشته وإدارة عيادتك باحترافية.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-header text-center reveal-up">
+                    <h2 class="section-title">على ماذا ستحصل في الاستشارة؟</h2>
+                    <p style="color: var(--clr-gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">هذه كلها ملحقات ترسل لك مع الاستشارة لتكون دليلك العملي.</p>
+                </div>
+
+                <div class="pdf-items reveal-up">
+                    <div class="pdf-item">
+                        <span class="pdf-icon">📄</span>
+                        <h4 dir="ltr" style="text-align: left;">1. General Customized Study PDF</h4>
+                        <p style="color: var(--clr-gray);">يحتوي على تحليل شامل لعيادتك من خلال المناقشة ومعرفة المشاكل والحلول المقترحة مع خارطة الطريق لحلها.</p>
+                    </div>
+                    <div class="pdf-item">
+                        <span class="pdf-icon">📄</span>
+                        <h4 dir="ltr" style="text-align: left;">2. Manage Clinic Staff PDF</h4>
+                        <p style="color: var(--clr-gray);">فيه إزاي تعين وتدير فريق العيادة، وإزاي تحط KPIs ليهم عشان تضمن أفضل أداء ومعاملة للمرضى.</p>
+                    </div>
+                    <div class="pdf-item">
+                        <span class="pdf-icon">📄</span>
+                        <h4 dir="ltr" style="text-align: left;">3. Manage Social Media Team PDF</h4>
+                        <p style="color: var(--clr-gray);">إزاي تعين فريق السوشيال ميديا، وتحط KPIs، وإزاي تتابع شغلهم وتقيمه باستمرار.</p>
+                    </div>
+                    <div class="pdf-item">
+                        <span class="pdf-icon">📄</span>
+                        <h4 dir="ltr" style="text-align: left;">4. Manage Google Business Profile</h4>
+                        <p style="color: var(--clr-gray);">إزاي تعمل Setup ليه، وإزاي تتابعه وتطوره، وتتابع الريفيوز عليه عشان تظهر للباحثين عن تخصصك.</p>
+                    </div>
+                    <div class="pdf-item">
+                        <span class="pdf-icon">📄</span>
+                        <h4 dir="ltr" style="text-align: left;">5. Manage Your Ads PDF</h4>
+                        <p style="color: var(--clr-gray);">إزاي تعين مسوق للحملات الإعلانية، وإزاي تحكم على شغله وتتابعه عشان تتأكد من تحقيق العائد المطلوب.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container footer-container grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                      <img src="assets/images/logofooter.png" alt="DotDoc Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title" style="color: var(--clr-white);">دوت دوك</span>
+                    </div>
+                </a>
+                <p class="footer-description">وكالة متخصصة في التسويق الطبي الرقمي. من أطباء إلى أطباء.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4 class="footer-title">روابط سريعة</h4>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="index.html#about">من نحن</a></li>
+                    <li><a href="index.html#services">الخدمات</a></li>
+                    <li><a href="index.html#portfolio">الأعمال</a></li>
+                    <li><a href="index.html#blog">المدونة</a></li>
+                    <li><a href="index.html#consultation">الاستشارة</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4 class="footer-title">تواصل معنا</h4>
+                <p dir="ltr" style="text-align: right;">+20 101 939 6638</p>
+                <p>m7md7akeem97@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 وكالة دوت دوك للتسويق الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

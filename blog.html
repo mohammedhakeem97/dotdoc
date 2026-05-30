@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مقالات متخصصة تساعد الأطباء على فهم استراتيجيات التسويق الطبي وبناء علامة شخصية.">
+    <title>المدونة | وكالة دوت دوك</title>
+    
+    <meta property="og:title" content="المدونة | وكالة دوت دوك">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .page-header {
+            padding: 8rem 0 3rem;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--clr-blue-100), var(--clr-blue-50));
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .article-card {
+            background: var(--clr-white);
+            border: 1px solid var(--clr-light-gray);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--clr-blue-300);
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--clr-blue-500);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .article-title {
+            font-size: 1.3rem;
+            color: var(--clr-blue-900);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--clr-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        .article-link {
+            display: inline-block;
+            color: var(--clr-blue-600);
+            font-weight: 700;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+            align-self: flex-start;
+        }
+
+        .article-card:hover .article-link {
+            border-bottom-color: var(--clr-blue-600);
+        }
+
+        .premium-card {
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--clr-white);
+            margin-top: 5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .premium-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .premium-title {
+            font-size: 2.5rem;
+            color: var(--clr-white);
+            margin-bottom: 1rem;
+        }
+
+        .premium-price-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .premium-price {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="DotDoc Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">دوت دوك</span>
+                    <span class="logo-subtitle">التسويق الطبي</span>
+                </div>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                    <li><a href="index.html#about" class="nav-link">من نحن</a></li>
+                    <li><a href="index.html#services" class="nav-link">خدماتنا</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">أعمالنا</a></li>
+                    <li><a href="index.html#blog" class="nav-link">المدونة</a></li>
+                    <li><a href="index.html#consultation" class="nav-link">الاستشارة</a></li>
+                    <li><a href="#contact" class="nav-link btn-nav">تواصل معنا</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container reveal-up">
+                <span class="section-subtitle">المدونة الطبية التسويقية</span>
+                <h1 class="hero-title">أفكار عميقة للأطباء الذين <br><span class="text-gradient">يريدون حضوراً أذكى</span></h1>
+                <p class="hero-description" style="margin: 0 auto;">مجموعة من المقالات المتخصصة التي تساعد الأطباء على فهم استراتيجيات التسويق الطبي وبناء علامة شخصية قوية وموثوقة.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="article-grid">
+                    <article class="article-card reveal-up">
+                        <span class="article-meta">01 • Branding • 6 دقائق</span>
+                        <h3 class="article-title">لماذا لم تعد المهارة الطبية وحدها كافية؟</h3>
+                        <p class="article-excerpt">تعرف على الأسباب التي تجعل الخبرة الطبية وحدها غير كافية لنجاح العيادة في العصر الرقمي.</p>
+                        <a href="blog/article-1.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up" style="transition-delay: 0.1s;">
+                        <span class="article-meta">02 • Trust • 7 دقائق</span>
+                        <h3 class="article-title">Personal Branding للأطباء: بناء الثقة قبل أول كشف</h3>
+                        <p class="article-excerpt">دليل شامل لبناء علامة شخصية قوية تجذب المرضى المناسبين وتبني الثقة قبل الزيارة الأولى.</p>
+                        <a href="blog/article-2.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up" style="transition-delay: 0.2s;">
+                        <span class="article-meta">03 • Ethics • 8 دقائق</span>
+                        <h3 class="article-title">التسويق الطبي الأخلاقي: كيف تجذب المرضى دون فقدان المهنية؟</h3>
+                        <p class="article-excerpt">كيف يوازن الطبيب الناجح بين زيادة عدد المرضى والحفاظ على ثقتهم وصورته المهنية.</p>
+                        <a href="blog/article-3.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up">
+                        <span class="article-meta">04 • Journey • 7 دقائق</span>
+                        <h3 class="article-title">رحلة المريض الرقمية: من البحث على جوجل إلى باب العيادة</h3>
+                        <p class="article-excerpt">كيف تحوّل البحث العابر للمريض على الإنترنت إلى حجز فعلي في عيادتك.</p>
+                        <a href="blog/article-4.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up" style="transition-delay: 0.1s;">
+                        <span class="article-meta">05 • Strategy • 6 دقائق</span>
+                        <h3 class="article-title">لماذا يفشل التسويق الطبي عندما يديره غير المتخصصين؟</h3>
+                        <p class="article-excerpt">الطب ليس تجارة إلكترونية، ولهذا يفشل التسويق العشوائي مع العيادات.</p>
+                        <a href="blog/article-5.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up" style="transition-delay: 0.2s;">
+                        <span class="article-meta">06 • Web • 7 دقائق</span>
+                        <h3 class="article-title">الموقع الإلكتروني الطبي: هل ما زال مهماً؟</h3>
+                        <p class="article-excerpt">لماذا يحتاج الطبيب إلى موقع إلكتروني خاص به بدلاً من الاعتماد على فيسبوك وإنستجرام فقط؟</p>
+                        <a href="blog/article-6.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up">
+                        <span class="article-meta">07 • Local SEO • 5 دقائق</span>
+                        <h3 class="article-title">Google Business Profile: الأداة الأكثر تجاهلاً</h3>
+                        <p class="article-excerpt">الأداة المجانية التي تجلب لعيادتك مرضى أكثر من الإعلانات الممولة.</p>
+                        <a href="blog/article-7.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up" style="transition-delay: 0.1s;">
+                        <span class="article-meta">08 • Reputation • 7 دقائق</span>
+                        <h3 class="article-title">كيف يبني الطبيب سمعة رقمية قوية؟</h3>
+                        <p class="article-excerpt">تعلم كيف تدير تقييمات عيادتك وتبني صورة موثوقة تجعل المرضى يختارونك دون تردد.</p>
+                        <a href="blog/article-8.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up" style="transition-delay: 0.2s;">
+                        <span class="article-meta">09 • Content • 8 دقائق</span>
+                        <h3 class="article-title">المحتوى الطبي الذي يحجز المرضى</h3>
+                        <p class="article-excerpt">كيف تكتب محتوى طبياً مفهوماً وإنسانياً يكسر حاجز الخوف لدى المريض.</p>
+                        <a href="blog/article-9.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up">
+                        <span class="article-meta">10 • Brand • 6 دقائق</span>
+                        <h3 class="article-title">عيادتك كعلامة تجارية</h3>
+                        <p class="article-excerpt">العيادة الناجحة تبيع التجربة والأمان، وليس فقط العلاج الطبي.</p>
+                        <a href="blog/article-10.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up" style="transition-delay: 0.1s;">
+                        <span class="article-meta">11 • AI • 6 دقائق</span>
+                        <h3 class="article-title">الذكاء الاصطناعي في التسويق الطبي</h3>
+                        <p class="article-excerpt">اكتشف كيف يمكن توظيف أدوات الذكاء الاصطناعي لرفع كفاءة تسويق عيادتك.</p>
+                        <a href="blog/article-11.html" class="article-link">فتح المقال</a>
+                    </article>
+                    <article class="article-card reveal-up" style="transition-delay: 0.2s;">
+                        <span class="article-meta">12 • Analysis • 7 دقائق</span>
+                        <h3 class="article-title">كيف تقيّم أداء فريق السوشيال ميديا لعيادتك؟</h3>
+                        <p class="article-excerpt">دليل الطبيب لمعرفة العائد على الاستثمار لفريق التسويق.</p>
+                        <a href="blog/article-12.html" class="article-link">فتح المقال</a>
+                    </article>
+                </div>
+
+                <div class="premium-card reveal-scale">
+                    <span class="premium-badge">★ عضوية كبار الأطباء (Premium)</span>
+                    <h2 class="premium-title">المدونة الطبية الخاصة</h2>
+                    <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                        اشترك الآن للحصول على مقال حصري أسبوعياً لمدة عام كامل. استراتيجيات متقدمة جداً وأسرار في التسويق الطبي وإدارة العيادات، نرسلها لك مباشرة لتطبيقها وزيادة أرباحك.
+                    </p>
+                    
+                    <div class="premium-price-box">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <span class="premium-price">500 <span style="font-size: 1.5rem;">ج.م</span></span>
+                            <span style="font-size: 1rem; margin-top: 0.5rem; opacity: 0.9;">اشتراك سنوي (52 مقال حصري)</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <a href="https://wa.me/201019396638?text=أريد الاشتراك في المدونة الطبية الخاصة (1000 جنيه)" class="btn btn-outline-light">احجز مقعدك الآن</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container footer-container grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                      <img src="assets/images/logofooter.png" alt="DotDoc Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title" style="color: var(--clr-white);">دوت دوك</span>
+                    </div>
+                </a>
+                <p class="footer-description">وكالة متخصصة في التسويق الطبي الرقمي. من أطباء إلى أطباء.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4 class="footer-title">روابط سريعة</h4>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="index.html#about">من نحن</a></li>
+                    <li><a href="index.html#services">الخدمات</a></li>
+                    <li><a href="index.html#portfolio">الأعمال</a></li>
+                    <li><a href="index.html#blog">المدونة</a></li>
+                    <li><a href="index.html#consultation">الاستشارة</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4 class="footer-title">تواصل معنا</h4>
+                <p dir="ltr" style="text-align: right;">+20 101 939 6638</p>
+                <p>m7md7akeem97@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 وكالة دوت دوك للتسويق الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
