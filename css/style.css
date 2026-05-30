@@ -52,6 +52,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -382,6 +383,21 @@ h1, h2, h3, h4 {
     background: radial-gradient(circle at 50% 0%, rgba(238, 242, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 .elegant-glow-1 {
     position: absolute;
     width: 700px;
@@ -603,15 +619,33 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
+    .reveal-right,
+    .reveal-left {
+        transform: translateY(30px);
+    }
+    
     .hero-elegant {
-        padding-top: 120px;
-        padding-bottom: 60px;
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+    .elegant-glow-1 {
+        width: 400px;
+        height: 400px;
+        top: -100px;
+        right: -100px;
+    }
+    .elegant-glow-2 {
+        width: 300px;
+        height: 300px;
+        bottom: -50px;
+        left: -50px;
     }
     .elegant-title {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
     }
     .elegant-description {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
     }
     .elegant-actions {
         flex-direction: column;
@@ -625,8 +659,8 @@ h1, h2, h3, h4 {
     }
     .elegant-stats-grid {
         flex-direction: column;
-        gap: 2.5rem;
-        padding: 2.5rem 1.5rem;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
     }
     .stat-divider {
         width: 100%;
@@ -750,6 +784,16 @@ h1, h2, h3, h4 {
     .about-image {
         order: 2;
         margin-top: 3rem;
+    }
+    .experience-badge {
+        bottom: auto;
+        top: -15px;
+        right: -10px;
+        width: 100px;
+        height: 100px;
+    }
+    .badge-number {
+        font-size: 1.5rem;
     }
 }
 
